@@ -19,9 +19,15 @@ setInterval(() => {
 const downloadBtn = document.getElementById("downloadBtn");
 if (downloadBtn) {
   downloadBtn.addEventListener("click", () => {
-    window.location.href = "/Asset/Ramsurya Resume KA.pdf";
+    const link = document.createElement("a");
+    link.href = "/Asset/Ramsurya Resume KA.pdf";
+    link.download = "Ramsurya_Resume.pdf"; // sets the download filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   });
 }
+
 
 /* TYPING EFFECT (About paragraph) */
 document.addEventListener("DOMContentLoaded", () => {
